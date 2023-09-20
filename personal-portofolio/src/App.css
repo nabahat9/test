@@ -1,0 +1,106 @@
+:root
+{
+ 
+
+--purple:rgba(222, 216, 236, 1);
+--purple-clear:rgba(176, 149, 240, 1);
+--black:rgba(31, 30, 34, 1);
+--blackTwo:rgba(49, 47, 54, 1);
+--blackThree:rgba(70, 66, 78, 1);
+
+@font-face {
+  font-family: 'robotoMono';
+  src: url('./fonts/robotoMono-Regular') format('woff2'); /* Adjust the path to match the actual file location */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'playfairONE';
+  src: url('./fonts/PlayfairDisplay-Bold') format('woff2'); /* Adjust the path to match the actual file location */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'playfairTWO';
+  src: url('./fonts/PlayfairDisplay-Regular') format('woff2'); /* Adjust the path to match the actual file location */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+}
+
+.App{
+    padding: 0.5rem 3.5rem;
+    overflow: hidden;
+    color: var(--black);    
+}
+
+.n-wrapper {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.n-left {
+  flex: 1;
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+}
+
+
+.n-name{
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.n-right{
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}
+
+.n-list{
+  flex:10;
+}
+
+.n-list>ul{
+  display: flex;
+  gap:2rem;
+  margin-right: 4rem;
+}
+.n-list>ul>li:hover{
+  cursor: pointer;
+  color: var(--orange);
+}
+.n-button{
+  flex:2;
+}
+
+.button{
+  border-radius: 34px;
+  border: none;
+  color:white;
+  font-size: 16px;
+  padding: 11px 26px 11px 26px;
+  background: linear-gradient(180deg , #fdc50f 26.71% , #fb982f 99.36%);
+  box-shadow: 0px 20px 24px 3px rgba(251, 161, 40, 0.42);
+}
+
+.button:hover{
+  background: white;
+  cursor: pointer;
+  color: var(--orange);
+  border: 1px solid var(--orange);
+}
+
+
+  
+
+  
