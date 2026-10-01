@@ -1,0 +1,72 @@
+# RuleGAT default configuration.
+# Every value can be overridden from the command line with  --set section.key=value
+# e.g.  python run_demo.py --set train.epochs=100 --set rulegat.lambda_constraint=1.0
+
+seed: 42                       # master seed (graph, split, model init)
+seeds: [42, 43, 44, 45, 46]    # seeds used by the multi-seed / ablation / robustness experiments
+
+data:
+  n_nodes: 150
+  n_rings: 8                   # injected R3 rings (3 accounts each)
+  instances_per_rule: 2        # injected anchors for R1, R2, R4, R5
+  n_decoys_per_rule: null      # near-miss (non-violating) look-alikes; null -> instances_per_rule
+  avg_out_degree: 2.2          # Poisson mean of out-degree in the normal background graph
+  max_normal_out_degree: 4     # background accounts never send to >4 receivers (< R2 / R4 thresholds)
+  amount_median: 400.0         # background transaction amounts ~ LogNormal, clipped
+  amount_sigma: 0.9
+  amount_max: 5000.0
+  behavioral_signal: 1.0       # 0 = injected accounts look behaviourally normal; 1 = default weak correlation
+  structural_features: false   # true -> append log in/out-degree to x (makes the MLP graph-aware!)
+
+split:
+  train: 0.6
+  val: 0.2
+  test: 0.2
+
+# Symbolic rule thresholds (rules operate on raw graph metadata, never on x)
+rules:
+  new_account_max_age: 7          # R2: age_days <= 7
+  min_outgoing_count: 5           # R2: outgoing_count >= 5
+  cycle_min_amount: 12000.0       # R3: every edge of the 3-cycle >= 12000
+  min_unique_receivers: 8         # R4
+  min_outgoing_amount: 30000.0    # R4
+  min_unique_senders: 8           # R5
+  min_incoming_amount: 30000.0    # R5
+
+model:
+  hidden_dim: 32
+  heads: 4
+  dropout: 0.3
+  attn_dropout: 0.0
+  message_passing: undirected     # GNN messages flow along both directions; rules still use the directed graph
+
+train:
+  lr: 0.01
+  weight_decay: 0.0005
+  epochs: 300
+  patience: 50                    # early stopping on validation F1 (neural branch, threshold 0.5)
+  use_pos_weight: true            # class imbalance: BCEWithLogits with pos_weight = n_neg / n_pos (train nodes)
+
+rulegat:
+  symbolic_weight: 0.5            # w in  final = (p_neural + w * s_symbolic) / (1 + w)
+  lambda_constraint: 0.5          # weight of the symbolic constraint loss
+  constraint_nodes: train         # 'train' (no label-equivalent info from val/test) or 'all' (transductive)
+  lambda_grid: [0.0, 0.1, 0.5, 1.0]
+
+threshold:
+  grid_size: 99                   # candidate thresholds linspace(0.01, 0.99, grid_size), chosen on validation only
+
+robustness:
+  settings:
+    - {name: clean,            add_frac: 0.0,  rewire_frac: 0.0}
+    - {name: add_10pct,        add_frac: 0.10, rewire_frac: 0.0}
+    - {name: add_30pct,        add_frac: 0.30, rewire_frac: 0.0}
+    - {name: rewire_5pct,      add_frac: 0.0,  rewire_frac: 0.05}
+    - {name: rewire_15pct,     add_frac: 0.0,  rewire_frac: 0.15}
+
+paths:
+  generated: data/generated
+  models: outputs/models
+  figures: outputs/figures
+  tables: outputs/tables
+  logs: outputs/logs

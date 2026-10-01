@@ -1,0 +1,122 @@
+[
+  {
+    "model": "MLP",
+    "setting": "threshold=0.5",
+    "n_runs": 5,
+    "accuracy": "0.813 \u00b1 0.073",
+    "precision": "0.544 \u00b1 0.127",
+    "recall": "0.633 \u00b1 0.183",
+    "f1": "0.574 \u00b1 0.144",
+    "roc_auc": "0.768 \u00b1 0.081"
+  },
+  {
+    "model": "MLP",
+    "setting": "val-selected threshold",
+    "n_runs": 5,
+    "accuracy": "0.840 \u00b1 0.049",
+    "precision": "0.660 \u00b1 0.213",
+    "recall": "0.633 \u00b1 0.183",
+    "f1": "0.607 \u00b1 0.104",
+    "roc_auc": "0.768 \u00b1 0.081"
+  },
+  {
+    "model": "GCN",
+    "setting": "threshold=0.5",
+    "n_runs": 5,
+    "accuracy": "0.767 \u00b1 0.097",
+    "precision": "0.475 \u00b1 0.119",
+    "recall": "0.900 \u00b1 0.224",
+    "f1": "0.610 \u00b1 0.132",
+    "roc_auc": "0.908 \u00b1 0.060"
+  },
+  {
+    "model": "GCN",
+    "setting": "val-selected threshold",
+    "n_runs": 5,
+    "accuracy": "0.773 \u00b1 0.095",
+    "precision": "0.481 \u00b1 0.117",
+    "recall": "0.867 \u00b1 0.217",
+    "f1": "0.608 \u00b1 0.132",
+    "roc_auc": "0.908 \u00b1 0.060"
+  },
+  {
+    "model": "GAT",
+    "setting": "threshold=0.5",
+    "n_runs": 5,
+    "accuracy": "0.787 \u00b1 0.122",
+    "precision": "0.512 \u00b1 0.161",
+    "recall": "0.867 \u00b1 0.139",
+    "f1": "0.636 \u00b1 0.154",
+    "roc_auc": "0.875 \u00b1 0.098"
+  },
+  {
+    "model": "GAT",
+    "setting": "val-selected threshold",
+    "n_runs": 5,
+    "accuracy": "0.700 \u00b1 0.197",
+    "precision": "0.524 \u00b1 0.295",
+    "recall": "0.800 \u00b1 0.274",
+    "f1": "0.538 \u00b1 0.123",
+    "roc_auc": "0.875 \u00b1 0.098"
+  },
+  {
+    "model": "RuleGAT",
+    "setting": "threshold=0.5",
+    "n_runs": 5,
+    "accuracy": "0.920 \u00b1 0.096",
+    "precision": "0.785 \u00b1 0.225",
+    "recall": "0.967 \u00b1 0.075",
+    "f1": "0.852 \u00b1 0.158",
+    "roc_auc": "0.989 \u00b1 0.013"
+  },
+  {
+    "model": "RuleGAT",
+    "setting": "val-selected threshold",
+    "n_runs": 5,
+    "accuracy": "0.960 \u00b1 0.037",
+    "precision": "0.917 \u00b1 0.118",
+    "recall": "0.900 \u00b1 0.149",
+    "f1": "0.898 \u00b1 0.095",
+    "roc_auc": "0.989 \u00b1 0.013"
+  },
+  {
+    "model": "RuleGAT (neural branch only)",
+    "setting": "threshold=0.5",
+    "n_runs": 5,
+    "accuracy": "0.660 \u00b1 0.264",
+    "precision": "0.436 \u00b1 0.199",
+    "recall": "0.867 \u00b1 0.139",
+    "f1": "0.555 \u00b1 0.178",
+    "roc_auc": "0.878 \u00b1 0.099"
+  },
+  {
+    "model": "RuleGAT (neural branch only)",
+    "setting": "val-selected threshold",
+    "n_runs": 5,
+    "accuracy": "0.813 \u00b1 0.130",
+    "precision": "0.581 \u00b1 0.201",
+    "recall": "0.767 \u00b1 0.253",
+    "f1": "0.633 \u00b1 0.194",
+    "roc_auc": "0.878 \u00b1 0.099"
+  },
+  {
+    "model": "Symbolic rules only (reference)",
+    "setting": "threshold=0.5",
+    "n_runs": 5,
+    "accuracy": "1.000 \u00b1 0.000",
+    "precision": "1.000 \u00b1 0.000",
+    "recall": "1.000 \u00b1 0.000",
+    "f1": "1.000 \u00b1 0.000",
+    "roc_auc": "1.000 \u00b1 0.000"
+  },
+  {
+    "model": "Symbolic rules only (reference)",
+    "setting": "val-selected threshold",
+    "n_runs": 5,
+    "accuracy": "1.000 \u00b1 0.000",
+    "precision": "1.000 \u00b1 0.000",
+    "recall": "1.000 \u00b1 0.000",
+    "f1": "1.000 \u00b1 0.000",
+    "roc_auc": "1.000 \u00b1 0.000"
+  }
+]

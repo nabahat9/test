@@ -1,0 +1,11 @@
+20:48:45 | INFO | config: seeds=[42, 43, 44, 45, 46] fixed_graph=False overrides=['data.structural_features=true', 'paths.tables=outputs/supplementary_structural_features/tables', 'paths.logs=outputs/supplementary_structural_features/logs']
+20:48:48 | INFO | seed 42 done | test positives: 6 / 30
+20:48:50 | INFO | seed 43 done | test positives: 6 / 30
+20:48:53 | INFO | seed 44 done | test positives: 6 / 30
+20:48:55 | INFO | seed 45 done | test positives: 6 / 30
+20:48:58 | INFO | seed 46 done | test positives: 6 / 30
+20:48:58 | INFO | wrote /home/claude/rulegat/outputs/supplementary_structural_features/tables/multiseed_raw.csv (60 rows)
+20:48:58 | INFO | wrote /home/claude/rulegat/outputs/supplementary_structural_features/tables/multiseed_results.csv (12 rows)
+20:48:58 | INFO | wrote /home/claude/rulegat/outputs/supplementary_structural_features/tables/multiseed_report.csv (12 rows)
+20:48:58 | INFO | wrote /home/claude/rulegat/outputs/supplementary_structural_features/tables/multiseed_rule_metrics.csv (12 rows)
+20:48:58 | INFO | wrote /home/claude/rulegat/outputs/supplementary_structural_features/tables/multiseed_rule_pooled.csv (12 rows)

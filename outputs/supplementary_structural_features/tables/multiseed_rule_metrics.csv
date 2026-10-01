@@ -1,0 +1,13 @@
+model,setting,n_runs,mean_rule_violation_detection_rate,std_rule_violation_detection_rate,mean_rule_consistency,std_rule_consistency,mean_R1_detection_rate,std_R1_detection_rate,mean_R2_detection_rate,std_R2_detection_rate,mean_R3_detection_rate,std_R3_detection_rate,mean_R4_detection_rate,std_R4_detection_rate,mean_R5_detection_rate,std_R5_detection_rate
+MLP,threshold=0.5,5,0.633333,0.182574,0.813333,0.0730297,1,0,,,0.573333,0.190977,0.5,0.707107,1,
+MLP,val-selected threshold,5,0.633333,0.182574,0.84,0.0494413,1,0,,,0.573333,0.190977,0.5,0.707107,1,
+GCN,threshold=0.5,5,0.9,0.223607,0.766667,0.0971825,1,0,,,0.9,0.223607,0.5,0.707107,1,
+GCN,val-selected threshold,5,0.866667,0.217307,0.773333,0.0954521,1,0,,,0.86,0.219089,0.5,0.707107,1,
+GAT,threshold=0.5,5,0.866667,0.139443,0.786667,0.121564,1,0,,,0.87,0.120416,0.5,0.707107,1,
+GAT,val-selected threshold,5,0.8,0.273861,0.7,0.197203,1,0,,,0.77,0.307409,0.5,0.707107,1,
+RuleGAT,threshold=0.5,5,0.966667,0.0745356,0.92,0.0960324,1,0,,,1,0,0.5,0.707107,1,
+RuleGAT,val-selected threshold,5,0.9,0.149071,0.96,0.0365148,1,0,,,0.91,0.124499,0.5,0.707107,1,
+RuleGAT (neural branch only),threshold=0.5,5,0.866667,0.139443,0.66,0.263944,1,0,,,0.87,0.120416,0.5,0.707107,1,
+RuleGAT (neural branch only),val-selected threshold,5,0.766667,0.252763,0.813333,0.130384,1,0,,,0.72,0.279732,0.5,0.707107,1,
+Symbolic rules only (reference),threshold=0.5,5,1,0,1,0,1,0,,,1,0,1,0,1,
+Symbolic rules only (reference),val-selected threshold,5,1,0,1,0,1,0,,,1,0,1,0,1,

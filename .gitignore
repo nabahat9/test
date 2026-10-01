@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+*.egg-info/
+
+# generated artefacts (re-create with run_demo.py / experiments/*)
+data/generated/*
+!data/generated/.gitkeep
+outputs/models/*
+outputs/figures/*
+outputs/tables/*
+outputs/logs/*
+!outputs/*/.gitkeep
